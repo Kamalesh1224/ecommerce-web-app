@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartCart | Product Relevance Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-shape bg-shape-left"></div>
+  <div class="bg-shape bg-shape-right"></div>
+
+  <main class="container">
+    <nav class="top-nav">
+      <a class="nav-link is-active" href="index.html">Home</a>
+      <a class="nav-link" href="products.html">Product Listing</a>
+    </nav>
+
+    <header class="hero">
+      <p class="eyebrow">Small E-Commerce Platform</p>
+      <h1>Smart recommendations that nudge higher sales</h1>
+      <p class="subtitle">
+        Demo catalog using initial dummy data with required fields: product name, category, price, and rating.
+      </p>
+    </header>
+
+    <section class="panel panel-flow">
+      <div class="section-title-wrap">
+        <div class="section-title-group">
+          <p class="section-label section-label-flow">User Flow</p>
+          <h2>How This Store Works</h2>
+        </div>
+        <p id="flowMeta"></p>
+      </div>
+      <div class="flow-grid">
+        <article class="flow-step">
+          <span class="flow-step-id">01</span>
+          <h3>Discover Products</h3>
+          <p>Browse the grid and explore product details with real-time catalog context.</p>
+        </article>
+        <article class="flow-step">
+          <span class="flow-step-id">02</span>
+          <h3>Personalize Feed</h3>
+          <p>Tick products and set filters to train recommendations around your intent.</p>
+        </article>
+        <article class="flow-step">
+          <span class="flow-step-id">03</span>
+          <h3>Act on Alerts</h3>
+          <p>Use trending, price-drop, and offer notifications to convert faster.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel panel-notifications">
+      <div class="section-title-wrap notifications-header">
+        <div class="section-title-group">
+          <p class="section-label section-label-alert">User Alerts</p>
+          <h2>Notifications</h2>
+        </div>
+        <div class="notification-actions">
+          <button id="enableNotifications" class="secondary-btn" type="button">Enable Browser Alerts</button>
+          <p id="notificationMeta"></p>
+        </div>
+      </div>
+      <p id="notificationEmpty" class="notification-empty"></p>
+      <div id="notificationList" class="notification-feed"></div>
+    </section>
+
+    <section class="panel filters">
+      <h2>Find Relevant Products</h2>
+      <div class="filter-grid">
+        <label>
+          Category
+          <select id="categoryFilter"></select>
+        </label>
+        <label>
+          Budget (USD)
+          <input id="budgetFilter" type="number" min="20" step="10" value="150" />
+        </label>
+        <label>
+          Minimum Rating
+          <input id="ratingFilter" type="range" min="1" max="5" step="0.1" value="3.8" />
+          <span id="ratingValue">3.8+</span>
+        </label>
+      </div>
+      <p class="helper-text">Tip: tick products in "All Products" to personalize "Recommended for You" with related items.</p>
+      <button id="resetFilters" type="button">Reset Filters</button>
+    </section>
+
+    <section class="panel panel-recommendations">
+      <div class="section-title-wrap">
+        <div class="section-title-group">
+          <p class="section-label section-label-reco">Recommendation Engine</p>
+          <h2>Recommended for You</h2>
+        </div>
+        <p id="recommendationMeta"></p>
+      </div>
+      <div id="recommendedList" class="product-grid recommendation-grid"></div>
+    </section>
+
+    <section class="panel panel-products">
+      <div class="section-title-wrap">
+        <div class="section-title-group">
+          <p class="section-label section-label-catalog">Product Catalog</p>
+          <h2>All Products</h2>
+        </div>
+        <p id="catalogMeta"></p>
+      </div>
+      <div id="catalogList" class="product-grid catalog-grid"></div>
+    </section>
+  </main>
+
+  <script src="products-data.js"></script>
+  <script src="interaction-tracker.js"></script>
+  <script src="notifications-engine.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

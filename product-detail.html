@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartCart | Product Details</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-shape bg-shape-left"></div>
+  <div class="bg-shape bg-shape-right"></div>
+
+  <main class="container">
+    <nav class="top-nav">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="products.html">Product Listing</a>
+      <span class="nav-link is-active">Product Details</span>
+    </nav>
+
+    <header class="hero">
+      <p class="eyebrow">Product Detail Page</p>
+      <h1 id="detailPageTitle">Product Details</h1>
+      <p class="subtitle">View detailed product information and discover similar products.</p>
+    </header>
+
+    <section class="panel panel-flow">
+      <div class="section-title-wrap">
+        <div class="section-title-group">
+          <p class="section-label section-label-flow">Confidence Layer</p>
+          <h2>Why This Feels Real</h2>
+        </div>
+      </div>
+      <div class="flow-grid">
+        <article class="flow-step">
+          <span class="flow-step-id">A</span>
+          <h3>Live Signals</h3>
+          <p>Product cards include discount, stock, and sales velocity style indicators.</p>
+        </article>
+        <article class="flow-step">
+          <span class="flow-step-id">B</span>
+          <h3>Contextual Matching</h3>
+          <p>Similar products blend feature overlap, price fit, and behavior-based relevance.</p>
+        </article>
+        <article class="flow-step">
+          <span class="flow-step-id">C</span>
+          <h3>Action Ready</h3>
+          <p>Alerts and recommendation cards are built to push high-intent product actions.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel panel-notifications">
+      <div class="section-title-wrap notifications-header">
+        <div class="section-title-group">
+          <p class="section-label section-label-alert">User Alerts</p>
+          <h2>Notifications</h2>
+        </div>
+        <div class="notification-actions">
+          <button id="enableNotifications" class="secondary-btn" type="button">Enable Browser Alerts</button>
+          <p id="notificationMeta"></p>
+        </div>
+      </div>
+      <p id="notificationEmpty" class="notification-empty"></p>
+      <div id="notificationList" class="notification-feed"></div>
+    </section>
+
+    <section class="panel panel-products">
+      <div class="section-title-wrap detail-header">
+        <div class="section-title-group">
+          <p class="section-label section-label-catalog">Product Overview</p>
+        </div>
+      </div>
+      <div id="productDetail"></div>
+    </section>
+
+    <section class="panel panel-recommendations">
+      <div class="section-title-wrap">
+        <div class="section-title-group">
+          <p class="section-label section-label-reco">Related Items</p>
+          <h2>Similar Products</h2>
+        </div>
+        <p id="similarMeta"></p>
+      </div>
+      <div id="similarList" class="product-grid recommendation-grid"></div>
+    </section>
+  </main>
+
+  <script src="products-data.js"></script>
+  <script src="interaction-tracker.js"></script>
+  <script src="notifications-engine.js"></script>
+  <script src="product-detail.js"></script>
+</body>
+</html>
